@@ -1,0 +1,5 @@
+This line will process all .mp3 files in a directory into .wav format for easy reading and processing in python.
+It works for PowerShell if ffmpeg is in path and your cd is the location of the files.
+
+
+ls | Where { $_.Extension -eq ".mp3" } | ForEach { ffmpeg -i $_.FullName $_.Name.Replace(".mp3", ".wav") }
